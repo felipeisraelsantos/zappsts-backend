@@ -1,6 +1,4 @@
 import { Request, Response, NextFunction } from "express"
-import { getRepository } from "typeorm"
-import User from "../models/User"
 import jwt from 'jsonwebtoken'
 
 import * as env from 'dotenv';

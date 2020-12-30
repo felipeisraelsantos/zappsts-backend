@@ -14,7 +14,7 @@ export default {
 
         if (!user) { return response.sendStatus(401) }
 
-        const token = jwt.sign({name: "Felipe", last_name: "Israel", age: 35},`${process.env.APP_KEY}`)
+        const token = jwt.sign({user},`${process.env.APP_KEY}`)
 
         return response.json({token})
         

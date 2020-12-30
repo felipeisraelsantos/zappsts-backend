@@ -5,7 +5,7 @@ import jwt from 'jsonwebtoken'
 
 import * as env from 'dotenv';
 env.config();
-
+ 
 
 export default {
 
@@ -17,13 +17,15 @@ export default {
     async store(request: Request,response: Response) {
         const { name, last_name,  age} = request.body
 
-        const token = jwt.sign({name: "Felipe", last_name: "Israel", age: 35},`${process.env.APP_KEY}`)
-        // const userRepository = getRepository(User)
-        // const user = userRepository.create({
-        //     name, last_name,  age 
-        // })
-        // await userRepository.save(user)
-    
+        const token = jwt.sign({name, last_name , age},`${process.env.APP_KEY}`)
+        const userRepository = getRepository(User)
+        const user = userRepository.create({
+            name, last_name,  age 
+        })
+        await userRepository.save(user)
+
+        console.log(jwt.decode(token));
+            
         return response.status(201).json(token)
     }
 }
