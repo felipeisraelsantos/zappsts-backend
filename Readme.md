@@ -69,3 +69,16 @@ Para o envio de dados , o usuário precisa estar autenticado
 | POST | /letters { middleware }
 ```
 
+
+
+### Design Pattern
+
+
+
+Foi escolhido o Design Pattern SOLID procurando seguir suas regras
+
+- Facilidade de se manter, adaptar e se ajustar às alterações de escopo;
+- Testável e de fácil entendimento;
+- Seja extensível para alterações com o menor esforço necessário;
+- Forneça o máximo de reaproveitamento;
+- Permaneça o máximo de tempo possível em utilização.
